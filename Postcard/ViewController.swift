@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTestField: UITextField!
     @IBOutlet weak var mailButton: UIButton!
-    
+    @IBOutlet weak var nameLabel: UILabel!
     
     
     
@@ -32,11 +32,17 @@ class ViewController: UIViewController {
     messageLabel.text=enterMessageTestField.text
     messageLabel.textColor=UIColor.redColor()
     
-    
     enterMessageTestField.text=""
     enterMessageTestField.resignFirstResponder()
+    // When u press send, if the pointer is currently located at the message test field, the keyboard will disapear, if it isnt the keyboard will stay there.
     mailButton.setTitle("Mail Sent", forState:UIControlState.Normal)
-    mailButton.userInteractionEnabled=false
+    //for making the button unclickable mailButton.userInteractionEnabled=false
+    
+    nameLabel.hidden=false
+    nameLabel.text=enterNameTextField.text
+    nameLabel.textColor=UIColor.blueColor()
+    enterNameTextField.text=""
+        
     }
 
 
